@@ -325,6 +325,12 @@
 
 					$('#feed-' + data.id + ' .duration-hour').click(function() {
 						$('#loadingData').foundation('reveal', 'open');
+						updateFeeds(data.id, thisFeedDatastreams, '3hours', 15);
+						return false;
+					});
+
+					$('#feed-' + data.id + ' .duration-hour').click(function() {
+						$('#loadingData').foundation('reveal', 'open');
 						updateFeeds(data.id, thisFeedDatastreams, '6hours', 30);
 						return false;
 					});
@@ -391,12 +397,12 @@
 	}
 
 	if(applicationName != '') {
-		$('h1').html(applicationName).css('color', 'white');
+		$('h1').html(applicationName).css('color', 'red');
 		document.title = applicationName + ' - Powered by Xively';
 	}
 
 	if(dataColor == '') {
-		dataColor = '0A1922';
+		dataColor = '66CDAA';
 	}
 
 	var feeds = feedString.split(',');
